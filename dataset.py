@@ -17,7 +17,7 @@ class Dataset(torch.utils.data.Dataset):
         self.words_indexes = [self.word_to_index[w] for w in self.words]
 
     def load_words(self):
-        train_df = pd.read_csv('data/reddit-cleanjokes.csv')
+        train_df = pd.read_csv('dataset.csv')
         text = train_df['Joke'].str.cat(sep=' ')
         return text.split(' ')
 
