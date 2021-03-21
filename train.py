@@ -33,7 +33,8 @@ def train(dataset, model, args):
             loss.backward()
             optimizer.step()
 
-            print({ 'epoch': epoch, 'batch': batch, 'loss': loss.item() })
+        print({ 'epoch': epoch, 'batch': 0, 'loss': loss.item() })
+        print(predict(dataset, model, text=''))
 
 def predict(dataset, model, text, next_words=100):
     words = text.split(' ')
@@ -62,4 +63,4 @@ dataset = Dataset(args)
 model = Model(dataset)
 
 train(dataset, model, args)
-print(predict(dataset, model, text='Knock knock. Whos there?'))
+print(predict(dataset, model, text=''))
